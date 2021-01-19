@@ -12,6 +12,7 @@ public class v1ch3_7_1 {
 
         Console console = System.console();
         // console почему то не работает.. бросает NullPointException
+        //как оказалось - работает, но должно быть запущено отдельно, в консоли. Из под IDE не работает.
 //        String userName = console.readLine();
 //        //char[] pass = console.readPassword("Password: ");
 //        System.out.println(userName);
