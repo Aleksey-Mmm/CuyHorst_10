@@ -1,6 +1,7 @@
 package primery.inherit;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Employee extends Person{
     //private String name;
@@ -38,5 +39,41 @@ public class Employee extends Person{
 
     public LocalDate getHireDay() {
         return hireDay;
+    }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        System.out.println("Employee class: "+ o.getClass().getName());
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Employee employee = (Employee) o;
+//        return Double.compare(employee.getSalary(), getSalary()) == 0 && getHireDay().equals(employee.getHireDay());
+//    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        System.out.println("Employee class: "+ getClass().getName()+ " other class: "+ o.getClass().getName());
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Employee employee = (Employee) o;
+
+        if (Double.compare(employee.getSalary(), getSalary()) != 0) return false;
+        return getHireDay().equals(employee.getHireDay());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSalary(), getHireDay());
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getName()+ "{" +
+                "salary=" + getSalary() +
+                ", hireDay=" + getHireDay() +
+                '}';
     }
 }

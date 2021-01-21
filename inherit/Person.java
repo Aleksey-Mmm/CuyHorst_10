@@ -12,4 +12,20 @@ public abstract class Person {
     }
 
     public abstract String getDescription();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        System.out.println("Person class: "+ getClass().getName());
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        return getName().equals(person.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return getName().hashCode();
+    }
 }

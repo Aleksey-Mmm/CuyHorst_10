@@ -1,5 +1,7 @@
 package primery.inherit;
 
+import java.util.Objects;
+
 public class Manager extends Employee {
     private double bonus;
 
@@ -29,5 +31,27 @@ public class Manager extends Employee {
 
     public void setBonus(double bonus) {
         this.bonus = bonus;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "{" +
+                "bonus=" + bonus +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        System.out.println("Manager class: "+ getClass().getName());
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Manager manager = (Manager) o;
+        return Double.compare(manager.bonus, bonus) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), bonus);
     }
 }
