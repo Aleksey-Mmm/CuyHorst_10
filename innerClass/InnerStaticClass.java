@@ -1,13 +1,24 @@
 package primery.innerClass;
 
-public class innerStaticClass {
+import java.util.Arrays;
+
+public class InnerStaticClass {
     public static void main(String[] args) {
         double[] dArr = new  double[10];
         for (int i = 0; i < dArr.length; i++) {
             dArr[i] = 100 * Math.random();
-            ArrayAlg arrayAlg = new ArrayAlg();
-            ArrayAlg.Pair p = arrayAlg.minmax(dArr);
         }
+        Arrays.stream(dArr).forEach(System.out::println);
+
+        //если не делать minmax статическим
+        //ArrayAlg arrayAlg = new ArrayAlg();
+        //arrayAlg.minmax(dArr);
+
+        ArrayAlg.Pair p = ArrayAlg.minmax(dArr);
+        //полное имя класса ArrayAlg.Pair а не просто Pair
+        //полезно, если где то еще понадобится класс Pair но с другой сигнатурой
+
+        System.out.println(p.getFirst()+"; "+ p.getSecond());
     }
 }
 
@@ -30,7 +41,7 @@ class ArrayAlg {
         }
     }
 
-    public Pair minmax(double[] values) {
+    public static Pair minmax(double[] values) {
         double min = Double.POSITIVE_INFINITY;
         double max = Double.NEGATIVE_INFINITY;
 
