@@ -1,4 +1,7 @@
-package primery.HFJ_2012;
+package primery.HFJ_2012.simpleDotCom;
+
+import primery.HFJ_2012.simpleDotCom.DotCom;
+import primery.HFJ_2012.simpleDotCom.GameHelper;
 
 import java.util.ArrayList;
 

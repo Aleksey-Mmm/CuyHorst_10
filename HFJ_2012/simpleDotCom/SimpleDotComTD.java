@@ -1,4 +1,6 @@
-package primery.HFJ_2012;
+package primery.HFJ_2012.simpleDotCom;
+
+import primery.HFJ_2012.simpleDotCom.SimpleDotCom;
 
 public class SimpleDotComTD {
     public static void main(String[] args) {

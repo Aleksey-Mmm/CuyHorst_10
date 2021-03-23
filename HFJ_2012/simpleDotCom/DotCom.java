@@ -1,4 +1,4 @@
-package primery.HFJ_2012;
+package primery.HFJ_2012.simpleDotCom;
 
 import java.util.ArrayList;
 

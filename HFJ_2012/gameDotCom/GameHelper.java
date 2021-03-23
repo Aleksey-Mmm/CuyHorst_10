@@ -63,6 +63,18 @@ public class GameHelper {
             }
         }
 
-        return null;
+        int x = 0;
+        int row = 0;
+        int column = 0;
+        while (x < comSize) {
+            grid[coords[x]] = 1;    //помечаем ячейки на главной сетке как использованные
+            row = (int) (coords[x] / gridLength);
+            column = coords[x] % gridLength;
+            temp = String.valueOf(alphabet.charAt(column));
+            alphaCells.add(temp.concat(Integer.toString(row)));
+            x++;
+        }
+
+        return alphaCells;
     }
 }
