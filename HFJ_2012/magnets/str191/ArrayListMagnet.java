@@ -26,8 +26,9 @@ public class ArrayListMagnet {
     }
 
     public static void printAL(ArrayList<String> al) {
+
         for (String element : al) {
-            System.out.print(element+ " ");
+            System.out.print(al.indexOf(element) +"-" + element+ " ");
         }
         System.out.println();
     }
